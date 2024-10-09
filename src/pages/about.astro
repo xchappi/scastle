@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="About - Literary Autumn Blog">
+	<h1>About the Author</h1>
+	<img src="/author-photo.jpg" alt="Author's photo" class="author-photo">
+	<p>
+		Welcome to my autumn-inspired literary blog. I'm a passionate writer who finds inspiration in the changing colors of fall, 
+		the crisp air, and the cozy atmosphere that comes with the season. Through my writing, I aim to capture the essence of autumn 
+		and share stories that resonate with the soul.
+	</p>
+	<p>
+		My work spans various genres, from poetry to short stories and personal essays. Each piece is infused with the warmth and 
+		nostalgia that autumn brings, exploring themes of change, reflection, and the beauty found in life's transitions.
+	</p>
+	<p>
+		Thank you for joining me on this literary journey through the autumn of our lives and imaginations.
+	</p>
+</Layout>
+
+<style>
+	h1 {
+		color: rgb(var(--accent));
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+	}
+	.author-photo {
+		float: right;
+		width: 200px;
+		height: 200px;
+		object-fit: cover;
+		border-radius: 50%;
+		margin: 0 0 1rem 1rem;
+	}
+	p {
+		font-size: 1.1rem;
+		line-height: 1.6;
+		margin-bottom: 1rem;
+	}
+</style>

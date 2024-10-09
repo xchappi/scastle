@@ -1,0 +1,81 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="A literary writer's autumn-themed blog" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<a href="/">Home</a>
+				<a href="/about">About</a>
+				<a href="/blog">Blog</a>
+			</nav>
+		</header>
+		<main>
+			<slot />
+		</main>
+		<footer>
+			<p>&copy; 2023 Literary Autumn Blog. All rights reserved.</p>
+		</footer>
+	</body>
+</html>
+<style is:global>
+	:root {
+		--accent: 193, 76, 38;
+		--accent-light: 255, 183, 77;
+		--accent-dark: 102, 51, 0;
+		--background: 251, 241, 227;
+		--text: 51, 51, 51;
+	}
+	html {
+		font-family: 'Georgia', serif;
+		background-color: rgb(var(--background));
+		color: rgb(var(--text));
+	}
+	body {
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+	}
+	header {
+		background-color: rgb(var(--accent));
+		padding: 1rem;
+	}
+	nav {
+		display: flex;
+		justify-content: center;
+		gap: 1rem;
+	}
+	nav a {
+		color: rgb(var(--background));
+		text-decoration: none;
+		font-weight: bold;
+	}
+	main {
+		flex: 1;
+		padding: 2rem;
+		max-width: 800px;
+		margin: 0 auto;
+	}
+	footer {
+		background-color: rgb(var(--accent-dark));
+		color: rgb(var(--background));
+		text-align: center;
+		padding: 1rem;
+	}
+</style>

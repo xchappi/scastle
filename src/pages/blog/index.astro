@@ -1,0 +1,38 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import BlogPost from '../../components/BlogPost.astro';
+
+const posts = [
+	{ title: "Autumn Leaves: A Poetic Journey", date: "2023-09-15", slug: "autumn-leaves" },
+	{ title: "The Whisper of Fall", date: "2023-09-10", slug: "whisper-of-fall" },
+	{ title: "Harvest Moon Tales", date: "2023-09-05", slug: "harvest-moon-tales" },
+	{ title: "Pumpkin Spice and Prose", date: "2023-08-30", slug: "pumpkin-spice-and-prose" },
+	{ title: "The Autumn Equinox: A Writer's Reflection", date: "2023-08-25", slug: "autumn-equinox-reflection" },
+];
+---
+
+<Layout title="Blog - Literary Autumn">
+	<h1>Blog Posts</h1>
+	<ul>
+		{posts.map(post => (
+			<li>
+				<BlogPost title={post.title} date={post.date} slug={post.slug} />
+			</li>
+		))}
+	</ul>
+</Layout>
+
+<style>
+	h1 {
+		color: rgb(var(--accent));
+		font-size: 2.5rem;
+		margin-bottom: 2rem;
+	}
+	ul {
+		list-style-type: none;
+		padding: 0;
+	}
+	li {
+		margin-bottom: 1.5rem;
+	}
+</style>
